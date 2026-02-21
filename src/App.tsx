@@ -107,15 +107,15 @@ const App: React.FC = () => {
             </AnimatePresence>
 
             {/* Hero Section */}
-            <section className="relative h-screen w-full overflow-hidden bg-black">
-                <div className="absolute inset-0 z-0 bg-black flex items-center justify-center">
+            <section className="relative h-[100dvh] w-screen overflow-hidden bg-black">
+                <div className="absolute inset-0 z-0 bg-black overflow-hidden">
                     {isLoaded && (
                         <video
                             autoPlay
                             loop
                             muted
                             playsInline
-                            className="w-full h-full object-cover opacity-80"
+                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover opacity-80"
                             src="/Video_Explosão.mp4"
                         >
                             Seu navegador não suporta a tag de vídeo.
