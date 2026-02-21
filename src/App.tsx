@@ -110,16 +110,26 @@ const App: React.FC = () => {
             <section className="relative h-[100dvh] w-screen overflow-hidden bg-black">
                 <div className="absolute inset-0 z-0 bg-black overflow-hidden">
                     {isLoaded && (
-                        <video
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full w-auto h-auto object-cover opacity-80"
-                            src="/Video_Explosão.mp4"
-                        >
-                            Seu navegador não suporta a tag de vídeo.
-                        </video>
+                        <>
+                            {/* Mobile Video */}
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="absolute inset-0 w-full h-full object-cover opacity-80 block md:hidden"
+                                src="/Video_explosao_mobile.mp4"
+                            />
+                            {/* Desktop Video */}
+                            <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="absolute inset-0 w-full h-full object-cover opacity-80 hidden md:block"
+                                src="/Video_Explosão.mp4"
+                            />
+                        </>
                     )}
                 </div>
                 {/* Gradient Overlay for Text Readability */}
