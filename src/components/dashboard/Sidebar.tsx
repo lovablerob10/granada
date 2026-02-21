@@ -132,7 +132,7 @@ export const Sidebar: React.FC = () => {
                             <User className="text-white w-6 h-6" />
                         </div>
                         <div className="flex-1 overflow-hidden">
-                            <p className="text-white font-bold text-sm truncate">DORIVAL JUNIOR</p>
+                            <p className="text-white font-bold text-sm truncate">ROBSON NOBRE</p>
                             <p className="text-[10px] text-granada-gold font-bold uppercase tracking-tight">Sócio Lendário</p>
                         </div>
                         <button className="text-gray-500 hover:text-white transition-colors">
