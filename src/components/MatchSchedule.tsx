@@ -1,51 +1,50 @@
 import React from 'react';
-import { MapPin } from 'lucide-react';
+import { MapPin, Calendar, Trophy, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const matches = [
-    { opponent: 'Dragões FC', date: '22 FEV', time: '21:30', location: 'Estádio Granada', type: 'COPA' },
-    { opponent: 'Santarém', date: '01 MAR', time: '16:00', location: 'Arena Sul', type: 'LIGA' },
-    { opponent: 'Titãs', date: '08 MAR', time: '19:00', location: 'Estádio Granada', type: 'LIGA' },
-];
+import { upcomingMatches } from '../data/matches';
 
 export const MatchSchedule: React.FC = () => {
-    return (
-        <section className="py-24 px-6 overflow-hidden">
-            <div className="max-w-7xl mx-auto">
-                <h2 className="text-5xl md:text-7xl mb-16">PRÓXIMOS <span className="text-granada-gold">COMBATES</span></h2>
+    const matches = upcomingMatches;
 
-                <div className="flex flex-col md:flex-row gap-6">
+    return (
+        <section className="py-24 bg-granada-black border-t border-white/5 px-6 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-granada-gold/5 rounded-full blur-[150px] pointer-events-none animate-pulse-slow" />
+            <div className="max-w-7xl mx-auto relative z-10">
+                <div className="flex justify-between items-end mb-12">
+                    <div>
+                        <p className="text-granada-red uppercase tracking-[0.3em] text-xs font-bold mb-2">Próximos Confrontos</p>
+                        <h2 className="text-4xl md:text-6xl text-white uppercase">OS PRÓXIMOS <span className="underline decoration-granada-red underline-offset-8">DESAFIOS</span></h2>
+                    </div>
+                    <button className="text-white hover:text-granada-red transition-colors flex items-center gap-2 uppercase tracking-widest text-xs font-bold">
+                        Ver Agenda Completa <ChevronRight size={16} />
+                    </button>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {matches.map((match, i) => (
                         <motion.div
                             key={i}
                             whileHover={{ scale: 1.02 }}
-                            className="flex-1 card-premium p-1 border-granada-gold/10"
+                            className="glass-panel p-8 relative group overflow-hidden transition-all duration-500 hover:border-granada-red/50 hover:shadow-[0_10px_30px_rgba(212,17,17,0.1)]"
                         >
-                            <div className="bg-granada-black p-6 rounded-lg">
-                                <div className="flex justify-between items-start mb-6">
-                                    <span className="px-3 py-1 bg-granada-dark text-[10px] font-bold tracking-tighter rounded border border-granada-gold/30">
-                                        {match.type}
-                                    </span>
-                                    <div className="text-right">
-                                        <p className="text-granada-gold font-bold">{match.date}</p>
-                                        <p className="text-xs text-gray-400">{match.time}</p>
-                                    </div>
-                                </div>
-
-                                <div className="flex items-center gap-4 mb-8">
-                                    <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center border border-white/10 font-bebas text-xl">VS</div>
-                                    <h3 className="text-2xl font-bebas tracking-wide">{match.opponent}</h3>
-                                </div>
-
-                                <div className="flex items-center gap-2 text-xs text-gray-500">
-                                    <MapPin size={14} />
-                                    <span>{match.location}</span>
-                                </div>
-
-                                <button className="w-full mt-6 py-2 bg-white/5 hover:bg-white/10 text-xs font-bold uppercase tracking-widest transition-colors rounded">
-                                    Comprar Ingressos
-                                </button>
+                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <Trophy size={40} className="text-white" />
                             </div>
+                            <p className="text-gray-500 uppercase tracking-widest mt-4">Veste o orgulho de Campinas.</p>
+                            <h3 className="text-2xl font-bebas text-white mb-6 uppercase tracking-wider">{match.opponent}</h3>
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3 text-sm text-gray-400">
+                                    <Calendar size={14} className="text-granada-red" />
+                                    <span>{match.date}</span>
+                                </div>
+                                <div className="flex items-center gap-3 text-sm text-gray-400">
+                                    <MapPin size={14} className="text-granada-red" />
+                                    <span>{match.venue}</span>
+                                </div>
+                            </div>
+                            <button className="mt-8 w-full py-3 border border-white/20 text-white hover:bg-white hover:text-black transition-all font-bold text-xs uppercase tracking-widest">
+                                Comprar Ingresso
+                            </button>
                         </motion.div>
                     ))}
                 </div>

@@ -8,11 +8,12 @@ export default {
         extend: {
             colors: {
                 granada: {
-                    dark: '#4a0000',
-                    red: '#8b0000',
-                    gold: '#d4af37',
-                    black: '#0a0a0a',
-                    goldlight: '#f5e2a1',
+                    dark: '#111111',
+                    red: '#d41111',
+                    silver: '#e5e7eb',
+                    black: '#000000',
+                    white: '#ffffff',
+                    gold: '#D4AF37',
                 }
             },
             fontFamily: {
@@ -21,12 +22,22 @@ export default {
             },
             animation: {
                 'glow': 'glow 2s ease-in-out infinite alternate',
+                'float': 'float 6s ease-in-out infinite',
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             },
             keyframes: {
                 glow: {
-                    '0%': { boxShadow: '0 0 5px #d4af37, 0 0 10px #d4af37' },
-                    '100%': { boxShadow: '0 0 20px #d4af37, 0 0 40px #d4af37' },
+                    '0%': { boxShadow: '0 0 5px #d41111, 0 0 10px #d41111' },
+                    '100%': { boxShadow: '0 0 20px #d41111, 0 0 40px #d41111' },
+                },
+                float: {
+                    '0%, 100%': { transform: 'translateY(0)' },
+                    '50%': { transform: 'translateY(-10px)' },
                 }
+            },
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'hero-gradient': 'linear-gradient(to bottom, rgba(0,0,0,0.2), #111111)',
             }
         },
     },

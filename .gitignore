@@ -45,3 +45,17 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+
+# Granada Backups & Blobs
+backup/
+*.mp4
+*.mov
+*.wmv
+*.avi
+*.PNG
+*.jpeg
+*.jpg
+!public/img/*
+!public/*.png
+!public/*.jpeg
+!public/*.jpg
