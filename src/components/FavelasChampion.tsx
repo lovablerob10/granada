@@ -70,10 +70,10 @@ export const FavelasChampion: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: "easeOut" }}
                 >
-                    <h2 className="text-granada-red font-bebas text-4xl md:text-6xl tracking-[0.3em] mb-4">
+                    <h2 className="text-granada-red font-bebas text-2xl sm:text-4xl md:text-6xl tracking-[0.15em] sm:tracking-[0.3em] mb-4">
                         BICAMPEÃO 2024 • 2025
                     </h2>
-                    <h1 className="text-white font-bebas text-7xl md:text-9xl tracking-tighter leading-none mb-12">
+                    <h1 className="text-white font-bebas text-5xl sm:text-7xl md:text-9xl tracking-tighter leading-none mb-8 sm:mb-12">
                         TAÇA DAS <span className="text-granada-red">FAVELAS</span>
                     </h1>
                 </motion.div>
@@ -87,7 +87,7 @@ export const FavelasChampion: React.FC = () => {
                         className="glass-panel p-10 text-left relative overflow-hidden group hover:border-granada-red/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,17,17,0.2)]"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity duration-700">
-                            <span className="font-bebas text-8xl text-white">2024</span>
+                            <span className="font-bebas text-5xl sm:text-8xl text-white">2024</span>
                         </div>
                         <h4 className="text-granada-red font-bold mb-2 uppercase tracking-widest">O Primeiro Passo</h4>
                         <h3 className="text-3xl text-white font-bold mb-4 uppercase">GLÓRIA NO BRINCO</h3>
@@ -104,7 +104,7 @@ export const FavelasChampion: React.FC = () => {
                         className="bg-granada-red p-10 border border-white/10 text-left relative overflow-hidden group hover:bg-granada-red/90 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(212,17,17,0.3)]"
                     >
                         <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-100 transition-opacity duration-700">
-                            <span className="font-bebas text-8xl text-black">2025</span>
+                            <span className="font-bebas text-5xl sm:text-8xl text-black">2025</span>
                         </div>
                         <h4 className="text-white font-bold mb-2 uppercase tracking-widest">A Consolidação</h4>
                         <h3 className="text-3xl text-white font-bold mb-4 uppercase">BICAMPEÃO DO POVO</h3>
@@ -121,7 +121,7 @@ export const FavelasChampion: React.FC = () => {
                     transition={{ delay: 0.6 }}
                     className="mt-20"
                 >
-                    <p className="text-gray-500 font-bebas text-2xl tracking-[0.5em] uppercase">Vila Bela & Granada FC Campinas</p>
+                    <p className="text-gray-500 font-bebas text-lg sm:text-2xl tracking-[0.3em] sm:tracking-[0.5em] uppercase">Vila Bela & Granada FC Campinas</p>
                 </motion.div>
             </div>
 

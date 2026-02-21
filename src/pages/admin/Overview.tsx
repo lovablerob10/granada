@@ -22,13 +22,13 @@ const adminIcons = [Users, ShoppingCart, DollarSign, Package];
 export const AdminOverview: React.FC = () => {
     return (
         <DashboardLayout title="Painel Administrativo">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 {adminStats.map((stat, i) => (
                     <AdminStat key={i} title={stat.title} value={stat.value} growth={stat.growth} icon={adminIcons[i]} />
                 ))}
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
                 <div className="glass-panel p-8">
                     <div className="flex justify-between items-center mb-8">
                         <h4 className="text-white font-bold uppercase text-sm border-l-2 border-granada-red pl-4">Últimos Pedidos</h4>
@@ -91,7 +91,7 @@ export const AdminOverview: React.FC = () => {
                     </div>
                     <div className="mt-12 p-6 bg-granada-gold/5 border border-granada-gold/10 text-center">
                         <p className="text-[10px] text-granada-gold font-bold uppercase tracking-[0.2em] mb-2">Meta Financeira Mensal</p>
-                        <h5 className="text-4xl text-white font-bebas tracking-widest">R$ 150.000 / <span className="text-granada-gold">R$ 200.000</span></h5>
+                        <h5 className="text-2xl sm:text-4xl text-white font-bebas tracking-widest">R$ 150.000 / <span className="text-granada-gold">R$ 200.000</span></h5>
                     </div>
                 </div>
             </div>

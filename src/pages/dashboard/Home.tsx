@@ -16,13 +16,13 @@ const StatCard: React.FC<{
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay, duration: 0.5 }}
-        className="glass-panel p-8 relative overflow-hidden group hover:border-granada-red/50 hover:shadow-[0_10px_30px_rgba(212,17,17,0.15)] transition-all duration-500 hover:-translate-y-1"
+        className="glass-panel p-5 sm:p-8 relative overflow-hidden group hover:border-granada-red/50 hover:shadow-[0_10px_30px_rgba(212,17,17,0.15)] transition-all duration-500 hover:-translate-y-1"
     >
         <div className={`absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity duration-500 text-${color}`}>
             <Icon size={80} />
         </div>
         <p className="text-[10px] text-gray-500 font-bold uppercase tracking-[0.2em] mb-4">{title}</p>
-        <h3 className="text-4xl font-bebas text-white tracking-widest mb-2">{value}</h3>
+        <h3 className="text-2xl sm:text-4xl font-bebas text-white tracking-widest mb-2">{value}</h3>
         <p className="text-xs text-gray-400 uppercase tracking-tighter">{subtext}</p>
         <div className={`absolute bottom-0 left-0 h-1 w-0 bg-${color} group-hover:w-full transition-all duration-700`} />
     </motion.div>
@@ -31,7 +31,7 @@ const StatCard: React.FC<{
 export const DashboardHome: React.FC = () => {
     return (
         <DashboardLayout title="Início">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
                 <StatCard
                     title="Próximo Desafio"
                     value="GRANADA VS PONTE"
@@ -66,7 +66,7 @@ export const DashboardHome: React.FC = () => {
                 />
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 sm:gap-12">
                 {/* Ticketing Focus */}
                 <div className="lg:col-span-2 space-y-8">
                     <div className="bg-gradient-to-r from-granada-red to-black p-1 bg-opacity-50">
