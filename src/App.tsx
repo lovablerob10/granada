@@ -111,23 +111,35 @@ const App: React.FC = () => {
                 <div className="absolute inset-0 z-0 bg-black overflow-hidden">
                     {isLoaded && (
                         <>
-                            {/* Mobile Video */}
+                            {/* Mobile Video (iOS-safe autoplay) */}
                             <video
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
+                                // @ts-ignore - webkit attribute for older iOS
+                                webkit-playsinline="true"
+                                x-webkit-airplay="deny"
+                                disablePictureInPicture
                                 className="absolute inset-0 w-full h-full object-cover opacity-80 block md:hidden"
                                 src="/Video_explosao_mobile.mp4"
+                                ref={(el) => { if (el) { el.setAttribute('muted', ''); el.setAttribute('playsinline', ''); el.play().catch(() => { }); } }}
                             />
-                            {/* Desktop Video */}
+                            {/* Desktop Video (iOS-safe autoplay) */}
                             <video
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
+                                preload="auto"
+                                // @ts-ignore - webkit attribute for older iOS
+                                webkit-playsinline="true"
+                                x-webkit-airplay="deny"
+                                disablePictureInPicture
                                 className="absolute inset-0 w-full h-full object-cover opacity-80 hidden md:block"
                                 src="/Video_Explosão.mp4"
+                                ref={(el) => { if (el) { el.setAttribute('muted', ''); el.setAttribute('playsinline', ''); el.play().catch(() => { }); } }}
                             />
                         </>
                     )}
